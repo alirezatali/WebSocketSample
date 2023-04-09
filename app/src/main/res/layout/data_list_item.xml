@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+        <variable
+            name="data"
+            type="com.tali.websocketsample.models.DetailsDto" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp">
+        <TextView
+            android:id="@+id/symbol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:textSize="20sp"
+            android:text="@{data.symbol}"
+            android:layout_margin="5dp"
+            android:textStyle="bold"
+            tools:text="BTCUSDT"
+            />
+        <TextView
+            android:id="@+id/lastPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:textSize="20sp"
+            android:text="@{data.lastPrice}"
+            tools:text="Last Price"
+            android:layout_margin="5dp"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/perpetual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/symbol"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:textSize="16sp"
+            android:text="@string/perpetual"
+            android:layout_margin="5dp"
+            android:textColor="@color/gray"/>
+        <TextView
+            android:id="@+id/priceChange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/lastPrice"
+            app:layout_constraintRight_toRightOf="parent"
+            android:textSize="16sp"
+            android:text="@{data.priceChange.toString()}"
+            android:layout_margin="5dp"
+            android:textColor="@{data.priceChange &lt; 0 ? @color/red : @color/green}"
+            tools:text="PriceChange"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
