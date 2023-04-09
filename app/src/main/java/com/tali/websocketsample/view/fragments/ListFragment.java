@@ -21,10 +21,12 @@ import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import dagger.hilt.android.AndroidEntryPoint;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.WebSocket;
 
+@AndroidEntryPoint
 public class ListFragment extends BaseFragment<MainViewModel, ListFragmentBinding> {
     private WebSocket webSocket;
     @Inject
