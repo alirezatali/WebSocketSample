@@ -1,11 +1,11 @@
 package com.tali.websocketsample.view.activities;
 
-import androidx.fragment.app.ListFragment;
 
 import android.os.Bundle;
 
 import com.tali.websocketsample.R;
 import com.tali.websocketsample.databinding.ActivityMainBinding;
+import com.tali.websocketsample.view.fragments.ListFragment;
 
 import dagger.hilt.android.AndroidEntryPoint;
 
